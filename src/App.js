@@ -1,24 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
+import uuid from 'uuid/v4';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [luckyNumber, setLuckyNumber] = useState('');
+  const [error, setError] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div>
+        <h2>Click this button for lucky number</h2>
+        <button
+          className="generate-number-button"
+          onClick={() => {
+            setLuckyNumber(uuid());
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          This one
+        </button>
+
+        {Boolean(luckyNumber) && (
+          <p className="lucky-number-container">
+            Here's your lucky number: <span className="lucky-number">{luckyNumber}</span>
+          </p>
+        )}
+
+        <br />
+        {error && <h1>{error}</h1>}
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            const luckyNumberInInput = e.target[0];
+
+            if (!luckyNumberInInput.value) {
+              setError('Give me you lucky number dumbo');
+            } else {
+              setLuckyNumber('');
+              setError('');
+              luckyNumberInInput.setAttribute('value', '');
+              alert("you didn't win, sorry");
+            }
+          }}
+        >
+          <label>
+            Give me your lucky number:
+            <input name="number" />
+            <button type="submit">click</button>
+          </label>
+        </form>
+      </div>
     </div>
   );
 }

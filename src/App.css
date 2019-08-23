@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+.lucky-number-container {
+  display: flex;
+  justify-content: center
+}
+.lucky-number {
+  color: pink;
+background: red;
+transform: rotate(-10deg);
+display: block;
+}
