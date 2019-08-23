@@ -38,7 +38,7 @@ function App() {
             } else {
               setLuckyNumber('');
               setError('');
-              // luckyNumberInInput.setAttribute('value', '');
+              luckyNumberInInput.setAttribute('value', '');
               alert("you didn't win, sorry");
             }
           }}
