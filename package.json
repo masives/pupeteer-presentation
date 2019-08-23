@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jest-puppeteer": "^4.3.0",
     "lighthouse": "^5.2.0",
     "puppeteer": "^1.19.0",
     "react": "^16.9.0",

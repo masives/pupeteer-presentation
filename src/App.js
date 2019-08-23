@@ -27,7 +27,7 @@ function App() {
         )}
 
         <br />
-        {error && <h1>{error}</h1>}
+        {error && <h1 className="error">{error}</h1>}
         <form
           onSubmit={e => {
             e.preventDefault();

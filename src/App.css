@@ -33,11 +33,14 @@
 }
 .lucky-number-container {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 .lucky-number {
   color: pink;
-background: red;
-transform: rotate(-10deg);
-display: block;
+  background: red;
+  transform: rotate(-10deg);
+  display: block;
+}
+.error {
+  color: red;
 }
