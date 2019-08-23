@@ -71,7 +71,7 @@ const runCoverage = async url => {
   const url = 'https://10clouds.com/';
   const lighthouseReport = await runLighthouse(url);
 
-  console.log('\n LIGHTHOUSE ANALYSIS \n');
+  console.log(`\n LIGHTHOUSE ANALYSIS for: ${url}\n`);
   console.log('\n SUMMARY SCORE \n');
   for (let category in lighthouseReport.categories) {
     console.log(category, lighthouseReport.categories[category].score);
