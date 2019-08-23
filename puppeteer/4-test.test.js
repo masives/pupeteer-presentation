@@ -36,7 +36,7 @@ describe('Super lottery', () => {
     await page.keyboard.press('Enter');
 
     // then
-    const luckyNumberInput = await page.$eval(pageObject.luckyNumberInput, el => el.innerText);
+    const luckyNumberInput = await page.$eval(pageObject.luckyNumberInput, el => el.value);
     expect(luckyNumberInput).toEqual('');
   });
 

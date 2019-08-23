@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import uuid from 'uuid/v4';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
 
         <br />
         {error && <h1 className="error">{error}</h1>}
+
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -38,7 +38,7 @@ function App() {
             } else {
               setLuckyNumber('');
               setError('');
-              luckyNumberInInput.setAttribute('value', '');
+              // luckyNumberInInput.setAttribute('value', '');
               alert("you didn't win, sorry");
             }
           }}
