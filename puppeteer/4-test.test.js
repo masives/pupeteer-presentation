@@ -11,7 +11,7 @@ let page;
 let browser;
 describe('Super lottery', () => {
   beforeEach(async () => {
-    browser = await puppeteer.launch({ headless: true });
+    browser = await puppeteer.launch({ headless: false });
 
     page = await browser.newPage();
     await page.goto('http://localhost:3000');
