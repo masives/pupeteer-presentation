@@ -4,6 +4,7 @@ const pageObject = {
   generateNumberButton: '.generate-number-button',
   generatedNumber: '.lucky-number',
   submitButton: 'form button',
+  luckyNumberInput: 'form input',
 };
 
 const run = async () => {
@@ -26,7 +27,7 @@ const run = async () => {
   const luckyNumber = await page.$eval(pageObject.generatedNumber, el => el.innerText);
 
   // fill number
-  await page.focus('input');
+  await page.focus(pageObject.luckyNumberInput);
   await page.keyboard.type(luckyNumber);
   await page.screenshot({ path: 'screenshot-2.png' });
 

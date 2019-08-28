@@ -1,5 +1,4 @@
 const parseCoverage = coverage => {
-  // console.log({ coverage });
   const usedBytes = coverage.ranges.map(range => range.end - range.start).reduce((a, b) => a + b, 0);
   const totalBytes = coverage.text.length;
 
